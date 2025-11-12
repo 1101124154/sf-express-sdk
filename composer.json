@@ -1,0 +1,25 @@
+{
+  "name": "wangwei/sf-express-sdk",
+  "description": "SF Express (Fengqiao) SDK for PHP, simple client and API wrapper.",
+  "type": "library",
+  "license": "proprietary",
+  "homepage": "https://github.com/1101124154/sf-express-sdk",
+  "keywords": ["sf-express", "fengqiao", "sdk", "logistics", "shipping", "webman"],
+  "support": {
+    "issues": "https://github.com/1101124154/sf-express-sdk/issues",
+    "source": "https://github.com/1101124154/sf-express-sdk"
+  },
+  "authors": [
+    {"name": "WangWei"}
+  ],
+  "require": {
+    "php": ">=7.4",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Wangwei\\SfExpress\\": "src/"
+    }
+  },
+  "readme": "README.md"
+}
