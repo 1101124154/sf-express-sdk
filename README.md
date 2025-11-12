@@ -71,7 +71,7 @@ $res2 = $api->validateWaybillNo([ 'waybillNo' => '1234567890' ]);
 - 已提供示例配置：`config/sf_express.php`
 - 直接在项目中引用：
   ```php
-$config = require __DIR__ . '/vendor/wangwei1101/sf-express-sdk/config/sf_express.php';
+  $config = require __DIR__ . '/vendor/wangwei1101/sf-express-sdk/config/sf_express.php';
   $client = new \Wangwei\SfExpress\Client($config);
   $api    = new \Wangwei\SfExpress\Api($client);
   ```
