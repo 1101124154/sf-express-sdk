@@ -12,11 +12,11 @@
 ## 安装
 
 - Packagist（推荐正式使用）
-  - `composer require wangwei/sf-express-sdk`
+  - `composer require wangwei1101/sf-express-sdk`
 
 - VCS 仓库（直接引用 GitHub）
   - `composer config repositories.sf-express-sdk vcs https://github.com/1101124154/sf-express-sdk.git`
-  - `composer require wangwei/sf-express-sdk:dev-main`
+  - `composer require wangwei1101/sf-express-sdk:dev-main`
 
 - 本地 Path 仓库（联调）
   - 在应用的 `composer.json` 增加：
@@ -26,13 +26,13 @@
         { "type": "path", "url": "../SF-CSIM-EXPRESS-SDK-PHP-V2.1.2/sf-express-sdk", "options": { "symlink": true } }
       ],
       "require": {
-        "wangwei/sf-express-sdk": "dev-main"
+        "wangwei1101/sf-express-sdk": "dev-main"
       },
       "minimum-stability": "dev",
       "prefer-stable": true
     }
     ```
-  - 执行：`composer update wangwei/sf-express-sdk`
+- 执行：`composer update wangwei1101/sf-express-sdk`
 
 ## 快速开始
 
@@ -65,6 +65,20 @@ $res2 = $api->validateWaybillNo([ 'waybillNo' => '1234567890' ]);
 - `timeout`（int）：请求超时秒数，默认 `30`
 - `sandbox_url`（string，可选）：覆盖沙盒地址，默认 `http://sfapi-sbox.sf-express.com/std/service`
 - `prod_url`（string，可选）：覆盖生产地址，默认 `https://sfapi.sf-express.com/std/service`
+
+## 配置文件
+
+- 已提供示例配置：`config/sf_express.php`
+- 直接在项目中引用：
+  ```php
+$config = require __DIR__ . '/vendor/wangwei1101/sf-express-sdk/config/sf_express.php';
+  $client = new \Wangwei\SfExpress\Client($config);
+  $api    = new \Wangwei\SfExpress\Api($client);
+  ```
+- 支持环境变量映射（可在 `.env` 或系统环境中设置）：
+  - `SF_PARTNER_ID`、`SF_CHECKWORD`
+  - `SF_ENV`（`sandbox`/`prod`）、`SF_TIMEOUT`
+  - `SF_SANDBOX_URL`、`SF_PROD_URL`
 
 ## 接口方法与 serviceCode 映射
 
